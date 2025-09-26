@@ -1,103 +1,219 @@
 import Image from "next/image";
 
+import Link from "next/link";
+import Cards from "@/components/Cards";
+import SecondSection from "@/components/SecondSection";
+import ThirdSection from "@/components/ThirdSection";
+import DailyInspiration from "@/components/dailyInspiration";
+
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <main className="overflow-x-hidden bg-[#FFFDFA] w-full ">
+        <div className="w-full  pt-20 px-4 sm:px-8 md:px-16 ">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-14 ">
+            <div className="relative w-full md:w-[520px] h-[800px] sm:h-[400px] md:h-[600px]">
+              <Link href={"/"}>
+                <Image
+                  src="https://res.cloudinary.com/dpahyb1x9/image/upload/v1756900147/B6H8uMrvXJMcE3bXXnTeFhxAQ8_xkhjyu.jpg"
+                  alt="hello"
+                  fill
+                  className="object-cover "
+                />
+              </Link>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="w-full md:w-[850px] pr-0 md:pr-7">
+              <Link href="/" className="group">
+                <h1 className="text-[22px] sm:text-[28px] md:text-[28px] lg:text-5xl hover:underline tracking-tight relative inline-block cursor-pointer font-[outfit]">
+                  The Rise of Fashion Blogging:The <br />
+                  Role of Influencers in the Industry
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] group-hover:w-full"></span>
+                </h1>
+              </Link>
+
+              <h2 className="mt-5 font-[outfit] text-sm sm:text-base">
+                CERIDWEN / WRITER - FASHION - SEP 2, 2023
+              </h2>
+
+              <p className="mt-6 font-[outfit]  text-[18px]">
+                Style is the only thing you cannot buy It is not a shopping bag,
+                a label, or a price tag. it is something reflected from our soul
+                to the outside world, an imotion.
+              </p>
+
+              <div className="border-b-1 mt-8"></div>
+
+              <div className="max-w-7xl py-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <div className="bg-[#ffbd3a4b] px-4 ">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          BUSINESS
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1"></div>
+                      <p className="text-[12px]">SEP 12, 2023</p>
+                      <hr className="w-4" />
+                    </div>
+
+                    <div>
+                      <h1 className="hover:underline text-[18px] font-semibold">
+                        {" "}
+                        <Link href="/">
+                          The Importance of <br /> Corporate Social
+                        </Link>
+                      </h1>
+                    </div>
+                  </div>
+
+                  <div className=" flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <div className="px-2 rounded-md">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          <h1 className="bg-[#ffbd3a4b] py-1">TECHNOLOGY</h1>
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1"></div>
+                      <p className="text-[12px]">SEP 10, 2023</p>
+                      <hr className="w-4" />
+                    </div>
+
+                    <div>
+                      <h3 className="hover:underline text-[19px] font-semibold">
+                        <Link href="/">
+                          Self-Driving Cars: <br />
+                          Everything You Need to
+                        </Link>
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <div className="bg-[#ffbd3a4b] px-2">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          FASHION
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1"></div>
+                      <p className="text-[12px]">SEP 10, 2023</p>
+                      <hr className="w-4" />
+                    </div>
+                    <div>
+                      <h4 className="hover:underline text-[19px] font-semibold">
+                        <Link href={"/"}>
+                          Fashion and Celebrity <br /> Culture:The Influence
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-10">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <div className="bg-[#ffbd3a4b]  ">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          TECHNOLOGY
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1"></div>
+                      <p className="text-[12px]">SEP 12, 2023</p>
+                      <hr className="w-4" />
+                    </div>
+
+                    <div>
+                      <h1 className="hover:underline text-[19px] font-semibold">
+                        {" "}
+                        <Link href="/">
+                          Global Chip shortage to <br /> Hurt Computer Firms
+                        </Link>
+                      </h1>
+                    </div>
+                  </div>
+
+                  <div className=" flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <div className="px-2 rounded-md">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          <h1 className="bg-[#ffbd3a4b] px-4 py-1">BUSINESS</h1>
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1"></div>
+                      <p className="text-[12px]">SEP 10, 2023</p>
+                      <hr className="w-4" />
+                    </div>
+
+                    <div>
+                      <h3 className="hover:underline text-[19px] font-semibold">
+                        <Link href="/">
+                          The Role of Purpose in <br />
+                          Business: Building a
+                        </Link>
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center">
+                      <div className="bg-[#ffbd3a4b] px-4">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          FASHION
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1"></div>
+                      <p className="text-[12px]">SEP 10, 2023</p>
+                      <hr className="w-4" />
+                    </div>
+                    <div>
+                      <h4 className="hover:underline text-[19px] font-semibold">
+                        <Link href={"/"}>
+                          The Importance of Fit in <br /> Fashion: Balancing
+                        </Link>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-[5vh] mt-10 border-b border-px w-[100%] "></div>
+        </div>
+
+        <div className="h-[90vh] mt-10 w-full">
+          <h1 className="text-4xl px-14"></h1>
+          <Cards />
+        </div>
+        <div className="mt-20">
+          <SecondSection />
+        </div>
+
+        <div>
+          <ThirdSection />
+        </div>
+
+        <div>
+         <DailyInspiration/>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }

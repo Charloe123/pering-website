@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 interface ClientDateProps {
   date?: string;
 }
@@ -66,7 +67,6 @@ export default function MotivationSection() {
             key={motivation._id}
             className="flex flex-col sm:flex-row gap-4 items-start cursor-pointer w-full"
           >
-           
             <Link
               href={`/motivation/${motivation._id}`}
               className="flex flex-col w-full sm:w-[200px]"
@@ -88,7 +88,6 @@ export default function MotivationSection() {
               </div>
             </Link>
 
-           
             <div className="flex flex-col w-full">
               <div className="flex mt-2 items-center w-full flex-wrap">
                 <div className="flex gap-3 flex-wrap items-center">
@@ -113,6 +112,9 @@ export default function MotivationSection() {
           </div>
         ))}
       </div>
+
+      {/* Horizontal line at the bottom of the section */}
+      <hr className="mt-12 border-t border-black" />
     </div>
   );
 }

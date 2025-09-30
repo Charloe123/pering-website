@@ -1,12 +1,11 @@
 import Image from "next/image";
-
 import Link from "next/link";
 import Cards from "@/components/Cards";
 import SecondSection from "@/components/SecondSection";
 import ThirdSection from "@/components/ThirdSection";
 import DailyInspiration from "@/components/dailyInspiration";
 import MotivationSection from "@/components/MotivationSection";
-
+import Newsletter from "@/components/Newsletter";
 
 export default function Home() {
   return (
@@ -14,7 +13,7 @@ export default function Home() {
       <main className="overflow-x-hidden bg-[#FFFDFA] w-full ">
         <div className="w-full  pt-20 px-4 sm:px-8 md:px-16 ">
           <div className="flex flex-col md:flex-row gap-8 md:gap-14 ">
-            <div className="relative w-full md:w-[520px] h-[800px] sm:h-[400px] md:h-[600px]">
+            <div className="relative w-full md:w-[520px] h-[450px] sm:h-[400px] md:h-[600px]">
               <Link href={"/"}>
                 <Image
                   src="https://res.cloudinary.com/dpahyb1x9/image/upload/v1756900147/B6H8uMrvXJMcE3bXXnTeFhxAQ8_xkhjyu.jpg"
@@ -216,8 +215,12 @@ export default function Home() {
           <DailyInspiration />
         </div>
 
+        <div>
+          <MotivationSection />
+        </div>
+
         <div >
-         <MotivationSection />
+          <Newsletter />
         </div>
       </main>
     </>

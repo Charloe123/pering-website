@@ -24,7 +24,6 @@ export default function UserDashboard() {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [message, setMessage] = useState("");
 
-  // Store token and userId in state to ensure client-side access
   const [token, setToken] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
 
@@ -33,13 +32,10 @@ export default function UserDashboard() {
     setUserId(localStorage.getItem("userId"));
   }, []);
 
-  // fetchBlogs wrapped in useCallback to make it stable for useEffect
   const fetchBlogs = useCallback(async () => {
     if (!token || !userId) return;
-
     setLoading(true);
     setMessage("");
-
     try {
       const res = await fetch(`/api/blogs?userId=${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -54,7 +50,6 @@ export default function UserDashboard() {
     }
   }, [token, userId]);
 
-  // ✅ Fixed: added token and userId in the dependency array
   useEffect(() => {
     if (!token || !userId) {
       setMessage("You must be logged in to view your blogs.");
@@ -70,7 +65,6 @@ export default function UserDashboard() {
 
   const uploadImageToCloudinary = async (): Promise<string | null> => {
     if (!imageFile) return null;
-
     const formData = new FormData();
     formData.append("file", imageFile);
     formData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_PRESET!);
@@ -123,7 +117,6 @@ export default function UserDashboard() {
 
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this blog?")) return;
-
     try {
       const res = await fetch(`/api/blogs/${id}`, {
         method: "DELETE",
@@ -131,7 +124,6 @@ export default function UserDashboard() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to delete blog");
-
       setMessage("Blog deleted successfully!");
       fetchBlogs();
     } catch (error) {
@@ -145,7 +137,7 @@ export default function UserDashboard() {
 
   return (
     <div className="min-h-screen bg-[#FFFDFA] flex flex-col">
-      <header className="bg-white border-b-4 border-[#FFBD3A] p-4 flex justify-between items-center shadow-sm">
+      <header className="bg-white border-b-4 border-[#FFBD3A] p-4 flex flex-col sm:flex-row justify-between items-center shadow-sm gap-2 sm:gap-0">
         <h1 className="text-xl font-bold text-[#111111]">My Blog Dashboard</h1>
         <button
           onClick={() => {
@@ -158,8 +150,8 @@ export default function UserDashboard() {
         </button>
       </header>
 
-      <div className="flex flex-1">
-        <aside className="w-full lg:w-1/4 bg-white border-r border-[#FFBD3A]/50 p-6 shadow-md">
+      <div className="flex flex-col lg:flex-row flex-1">
+        <aside className="w-full lg:w-1/4 bg-white border-r border-[#FFBD3A]/50 p-4 sm:p-6 shadow-md">
           <h2 className="text-lg font-bold text-[#111111] mb-4 text-center">Create New Blog</h2>
           {message && <p className="mb-4 text-center text-[#0000EE] font-medium">{message}</p>}
           <form onSubmit={handleCreate} className="space-y-4">
@@ -196,21 +188,21 @@ export default function UserDashboard() {
           </form>
         </aside>
 
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 p-4 sm:p-6 overflow-y-auto">
           <h2 className="text-2xl font-bold mb-6 text-[#111111]">Your Blogs</h2>
           {loading ? (
             <p className="text-center text-[#444444]">Loading blogs...</p>
           ) : blogs.length === 0 ? (
             <p className="text-center text-[#444444]">No blogs yet.</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {blogs.map((blog) => (
                 <div
                   key={blog._id}
                   className="bg-white border border-[#FFBD3A]/30 rounded-xl shadow hover:shadow-lg transition flex flex-col"
                 >
                   {blog.image && (
-                    <div className="relative w-full h-40 rounded-t-xl overflow-hidden">
+                    <div className="relative w-full h-40 sm:h-48 rounded-t-xl overflow-hidden">
                       <Image src={blog.image} alt={blog.title} fill className="object-cover" />
                     </div>
                   )}
@@ -220,7 +212,7 @@ export default function UserDashboard() {
                     <p className="text-sm text-[#444444] mb-3">
                       Author: {blog.author?.username || "Unknown"}
                     </p>
-                    <div className="flex space-x-2">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                       <button
                         onClick={() => handleEdit(blog._id)}
                         className="flex-1 bg-[#0000EE] hover:bg-blue-700 text-white py-1 rounded-lg transition font-medium"

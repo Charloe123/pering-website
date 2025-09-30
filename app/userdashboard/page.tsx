@@ -150,7 +150,7 @@ export default function UserDashboard() {
         <button
           onClick={() => {
             localStorage.clear();
-            router.push("/signin");
+            router.push("/");
           }}
           className="bg-[#0000EE] text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition"
         >

@@ -30,7 +30,7 @@ export default async function ThirdSection() {
   if (!explores.length) return <p className="px-14">No explores available.</p>;
 
   return (
-    <div className="px-14 mt-16 h-[120vh] overflow-hidden">
+    <div className="px-14 mt-16 md:h-[120vh] overflow-hidden h-[180vh]">
       <h2 className="text-5xl">Explore Topics</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">

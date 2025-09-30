@@ -5,6 +5,8 @@ import Cards from "@/components/Cards";
 import SecondSection from "@/components/SecondSection";
 import ThirdSection from "@/components/ThirdSection";
 import DailyInspiration from "@/components/dailyInspiration";
+import MotivationSection from "@/components/MotivationSection";
+
 
 export default function Home() {
   return (
@@ -211,7 +213,11 @@ export default function Home() {
         </div>
 
         <div>
-         <DailyInspiration/>
+          <DailyInspiration />
+        </div>
+
+        <div >
+         <MotivationSection />
         </div>
       </main>
     </>

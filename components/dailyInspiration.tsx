@@ -44,7 +44,7 @@ export default function DailyInspiration() {
       <h2 className="text-5xl mb-12">Daily Inspiration</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-       
+        {/* Left side */}
         <div className="flex flex-col gap-6 lg:col-span-1">
           {leftCards.map((inspiration) => (
             <Link
@@ -52,7 +52,7 @@ export default function DailyInspiration() {
               key={inspiration._id}
               className="block duration-300"
             >
-              <div className="relative w-full aspect-[4/3] overflow-hidden ">
+              <div className="relative w-full aspect-[4/3] overflow-hidden">
                 <Image
                   src={inspiration.imageUrl}
                   alt={inspiration.title ?? "Daily Inspiration"}
@@ -64,19 +64,17 @@ export default function DailyInspiration() {
                 {inspiration.title}
               </h3>
 
-
               <div className="flex items-center justify-between mt-3">
-                  <div className="h-px flex-1 bg-black mr-2"></div>
-                  <button className="border border-black hover:bg-black hover:text-white px-3 py-1 text-[12px]">
-                    LISTEN
-                  </button>
-                </div>
+                <div className="h-px flex-1 bg-black mr-2"></div>
+                <button className="border border-black hover:bg-black hover:text-white px-3 py-1 text-[12px]">
+                  LISTEN
+                </button>
+              </div>
             </Link>
-            
           ))}
         </div>
 
-        
+        {/* Right side */}
         {rightCard && (
           <div className="lg:col-span-2">
             <div className="flex mt-2 items-center gap-2 w-full">
@@ -86,7 +84,7 @@ export default function DailyInspiration() {
               >
                 Lifestyle
               </a>
-              <div className="h-px w-24 bg-black"></div>
+              <div className="h-px w-[620px] bg-black"></div>
               <p className="text-[12px] ml-1">
                 {new Date(rightCard.date).toLocaleDateString()}
               </p>
@@ -96,7 +94,7 @@ export default function DailyInspiration() {
               href={`/daily/${rightCard._id}`}
               className="block duration-300 mt-2"
             >
-              <div className="relative w-full aspect-[8/5] overflow-hidden ">
+              <div className="relative w-full aspect-[8/5] overflow-hidden">
                 <Image
                   src={rightCard.imageUrl}
                   alt={rightCard.title ?? "Daily Inspiration"}
@@ -110,12 +108,16 @@ export default function DailyInspiration() {
               <p className="text-gray-600 mt-2">
                 {new Date(rightCard.date).toLocaleDateString()}
               </p>
-              <p className="mt-2 text-gray-700 text-lg">{rightCard.description}</p>
-              
+              <p className="mt-2 text-gray-700 text-lg">
+                {rightCard.description}
+              </p>
             </Link>
           </div>
         )}
       </div>
+
+      {/* HR line at the bottom */}
+      <hr className="mt-12 border-t " />
     </section>
   );
 }

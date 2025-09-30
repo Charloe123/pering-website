@@ -6,19 +6,18 @@ import Link from "next/link";
 
 export default function StickyImage() {
   return (
-    <div className=" w-full md:w-[560px] h-[650px] mt-16 sticky top-10">
-      {/* Main image */}
+    <div className=" w-full md:w-[560px] h-[650px] mt-16 sticky top-10 ">
+     
       <Link href={"/"}>
         <Image
           src="https://res.cloudinary.com/dpahyb1x9/image/upload/v1757318317/lPLq5LYGPKma7GvuNLZnBfIvdow_1_icbjbh.jpg"
           alt="image"
           fill
-          className="object-cover rounded-lg"
+          className="object-cover  sticky"
           priority
         />
       </Link>
 
-      {/* Overlay content */}
       <div className="absolute bottom-0 left-0 bg-white h-52 w-[90%] max-w-[500px] p-4 shadow-lg">
         <div className="flex items-center gap-2">
           <a

@@ -15,7 +15,7 @@ interface Trending {
 export const getData = async (): Promise<
   Trending[] | { trendings: Trending[] }
 > => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL 
 
   const res = await fetch(`${baseUrl}/api/trending`, {
     cache: "no-store",
@@ -39,7 +39,7 @@ export default async function SecondSection() {
         <div className="sticky">
         <StickyImage />
         </div>
-        {/* Trending cards (auto height, no y-overflow) */}
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
           {trendings.map((trending) => (
             <div key={trending._id} className="mb-8">

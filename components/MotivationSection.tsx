@@ -113,8 +113,8 @@ export default function MotivationSection() {
         ))}
       </div>
 
-      {/* Horizontal line at the bottom of the section */}
-      <hr className="mt-12 border-t border-black" />
+      <hr className="mt-15 border-t border-black" />
+      
     </div>
   );
 }

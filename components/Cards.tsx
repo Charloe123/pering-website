@@ -64,7 +64,7 @@ export default function Cards() {
               <div className="flex flex-col gap-2">
                 <div className="relative w-[355px] h-[200px] ">
                   <Link
-                    href={`/posts/${post._id}`}
+                    href={`/all-post/${post._id}`}
                     className="block w-[380px] h-full"
                   >
                     <Image
@@ -94,9 +94,11 @@ export default function Cards() {
 
                 <div className="flex items-center justify-between mt-3">
                   <div className="h-px flex-1 bg-black mr-2"></div>
-                  <button className="border border-black hover:bg-black hover:text-white px-3 py-1 text-[12px]">
-                    READ MORE
-                  </button>
+                  <Link href={`/all-post/${post._id}`}>
+                    <button className="border border-black hover:bg-black hover:text-white px-3 py-1 text-[12px]">
+                      READ MORE
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -107,3 +109,4 @@ export default function Cards() {
     </div>
   );
 }
+

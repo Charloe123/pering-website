@@ -6,11 +6,12 @@ import ThirdSection from "@/components/ThirdSection";
 import DailyInspiration from "@/components/dailyInspiration";
 import MotivationSection from "@/components/MotivationSection";
 import Newsletter from "@/components/Newsletter";
+import LatestSection from "@/components/LatestSection";
 
 export default function Home() {
   return (
     <>
-      <main className="overflow-x-hidden bg-[#FFFDFA] w-full ">
+      <main className=" bg-[#FFFDFA] w-full ">
         <div className="w-full  pt-20 px-4 sm:px-8 md:px-16 ">
           <div className="flex flex-col md:flex-row gap-8 md:gap-14 ">
             <div className="relative w-full md:w-[520px] h-[450px] sm:h-[400px] md:h-[600px]">
@@ -221,6 +222,10 @@ export default function Home() {
 
         <div >
           <Newsletter />
+        </div>
+
+        <div>
+          <LatestSection />
         </div>
       </main>
     </>

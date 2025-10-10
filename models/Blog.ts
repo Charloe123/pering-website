@@ -1,15 +1,32 @@
-import mongoose, { Schema, model, models } from "mongoose";
-import "./User"; 
+import mongoose, { Schema, Document } from "mongoose";
 
-const blogSchema = new Schema(
+export interface IBlog extends Document {
+  title: string;
+  author: string;
+  content: string;
+  date: string;
+  likes: string[];
+  dislikes: string[];
+  comments: { author: string; content: string; createdAt: Date }[];
+}
+
+const BlogSchema = new Schema<IBlog>(
   {
-    title: { type: String, required: true, trim: true },
+    title: { type: String, required: true },
+    author: { type: String, required: true },
     content: { type: String, required: true },
-    image: { type: String },
-    author: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    date: { type: String, default: () => new Date().toISOString() },
+    likes: { type: [String], default: [] },
+    dislikes: { type: [String], default: [] },
+    comments: [
+      {
+        author: { type: String, required: true },
+        content: { type: String, required: true },
+        createdAt: { type: Date, default: Date.now },
+      },
+    ],
   },
   { timestamps: true }
 );
 
-const Blog = models.Blog || model("Blog", blogSchema);
-export default Blog;
+export default mongoose.models.Blog || mongoose.model<IBlog>("Blog", BlogSchema);

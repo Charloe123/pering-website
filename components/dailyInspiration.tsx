@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Play } from "lucide-react";
 
 interface DailyInspiration {
   _id: string;
@@ -44,7 +45,7 @@ export default function DailyInspiration() {
       <h2 className="text-5xl mb-12">Daily Inspiration</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left side */}
+        
         <div className="flex flex-col gap-6 lg:col-span-1">
           {leftCards.map((inspiration) => (
             <Link
@@ -63,8 +64,10 @@ export default function DailyInspiration() {
               <h3 className="mt-2 text-xl font-semibold hover:underline">
                 {inspiration.title}
               </h3>
+              
 
               <div className="flex items-center justify-between mt-3">
+              <Play className="w-6 h-6 text-black border-black border-2" />
                 <div className="h-px flex-1 bg-black mr-2"></div>
                 <button className="border border-black hover:bg-black hover:text-white px-3 py-1 text-[12px]">
                   LISTEN
@@ -74,10 +77,12 @@ export default function DailyInspiration() {
           ))}
         </div>
 
-        {/* Right side */}
+       
         {rightCard && (
           <div className="lg:col-span-2">
-            <div className="flex mt-2 items-center gap-2 w-full">
+            <div className="flex items-center gap-2 w-full">
+            <Play className="w-6 h-6 text-black border-black border-2" />
+             
               <a
                 href="/technology"
                 className="hover:underline text-[12px] bg-[#ffbd3a4b] px-2"
@@ -112,6 +117,14 @@ export default function DailyInspiration() {
                 {rightCard.description}
               </p>
             </Link>
+
+            <div className="flex items-center justify-between mt-3">
+              <Play className="w-6 h-6 text-black border-black border-2" />
+                <div className="h-px flex-1 bg-black mr-2"></div>
+                <button className="border border-black hover:bg-black hover:text-white px-3 py-1 text-[12px]">
+                  LISTEN
+                </button>
+              </div>
           </div>
         )}
       </div>

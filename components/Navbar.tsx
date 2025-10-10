@@ -53,6 +53,11 @@ export default function Navbar() {
               CREATE POST
             </Link>
           </li>
+          <li>
+            <Link href="/admin-panel/dashboard" className="hover:text-gray-900 text-[12px] font-semibold font-[outfit]">
+              ADMIN DASHBOARD
+            </Link>
+          </li>
         </ul>
 
         {/* Desktop Social Links */}
@@ -109,6 +114,11 @@ export default function Navbar() {
             <li>
               <Link href="/signin" className="text-gray-700 hover:text-gray-900 font-medium block py-1" onClick={() => setMenuOpen(false)}>
                 CREATE POST
+              </Link>
+            </li>
+            <li>
+              <Link href="/admin-panel/dashboard" className="text-gray-700 hover:text-gray-900 font-medium block py-1" onClick={() => setMenuOpen(false)}>
+                ADMIN DASHBOARD
               </Link>
             </li>
           </ul>

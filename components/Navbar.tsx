@@ -34,8 +34,8 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/business" className="hover:text-gray-900 text-[12px] font-semibold font-[outfit]">
-              BUSINESS
+            <Link href="/shop" className="hover:text-gray-900 text-[12px] font-semibold font-[outfit]">
+            SHOP
             </Link>
           </li>
           <li>
@@ -97,8 +97,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/business" className="text-gray-700 hover:text-gray-900 font-medium block py-1" onClick={() => setMenuOpen(false)}>
-                BUSINESS
+              <Link href="/shop" className="text-gray-700 hover:text-gray-900 font-medium block py-1" onClick={() => setMenuOpen(false)}>
+                SHOP
               </Link>
             </li>
             <li>

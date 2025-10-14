@@ -39,7 +39,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/technology" className="hover:text-gray-900 text-[12px] font-semibold font-[outfit]">
+            <Link href="/tech" className="hover:text-gray-900 text-[12px] font-semibold font-[outfit]">
               TECHNOLOGY
             </Link>
           </li>
@@ -102,7 +102,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/technology" className="text-gray-700 hover:text-gray-900 font-medium block py-1" onClick={() => setMenuOpen(false)}>
+              <Link href="/tech" className="text-gray-700 hover:text-gray-900 font-medium block py-1" onClick={() => setMenuOpen(false)}>
                 TECHNOLOGY
               </Link>
             </li>

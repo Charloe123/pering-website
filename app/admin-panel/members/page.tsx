@@ -53,15 +53,15 @@ export default function MembersPage() {
   if (loading) return <p>Loading users...</p>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Members</h1>
+    <div className="p-4 sm:p-6">
+      <h1 className="text-xl sm:text-2xl font-bold mb-4">Members</h1>
 
       <DataTable<UserType>
         columns={columns}
         data={users}
         actions={(user) => (
           <button
-            className="bg-red-600 text-white px-2 py-1 rounded"
+            className="bg-red-600 text-white px-2 py-1 rounded text-sm"
             onClick={() => handleDelete(user._id)}
           >
             Delete

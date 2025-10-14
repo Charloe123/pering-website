@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 const {Schema}= mongoose
-const technologySchema = new Schema({
+const techSchema = new Schema({
 
     title:{
         type:String,
@@ -19,10 +19,10 @@ const technologySchema = new Schema({
         default:Date.now,
     },
 
-    ImageUrl:{
+    imageUrl:{
         type:String,
         required:true,
     }
 })
 
- export default mongoose.models.technology || mongoose.model("technology", technologySchema)
+ export default mongoose.models.tech || mongoose.model("tech", techSchema)

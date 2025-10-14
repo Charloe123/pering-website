@@ -2,7 +2,7 @@ import mongoose, { Schema, Document } from "mongoose";
 
 export interface IBlog extends Document {
   title: string;
-  author: string;
+  author: string; 
   content: string;
   date: string;
   likes: string[];
@@ -13,7 +13,7 @@ export interface IBlog extends Document {
 const BlogSchema = new Schema<IBlog>(
   {
     title: { type: String, required: true },
-    author: { type: String, required: true },
+    author: { type: String, required: true }, 
     content: { type: String, required: true },
     date: { type: String, default: () => new Date().toISOString() },
     likes: { type: [String], default: [] },

@@ -19,7 +19,7 @@ const latestSchema = new Schema({
         default:Date.now,
     },
 
-    ImageUrl:{  
+    imageUrl:{
         type:String,
         required:true,
     }

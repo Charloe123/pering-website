@@ -22,17 +22,17 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Settings</h1>
-      <div className="space-y-4">
+    <div className="p-4 sm:p-6">
+      <h1 className="text-xl sm:text-2xl font-bold mb-4">Settings</h1>
+      <div className="space-y-4 max-w-md">
         {settings.map(setting => (
-          <div key={setting.id} className="flex flex-col md:flex-row md:items-center gap-2">
-            <label className="w-40 font-semibold">{setting.label}</label>
+          <div key={setting.id} className="flex flex-col gap-2">
+            <label className="font-semibold text-sm sm:text-base">{setting.label}</label>
             <input
               type="text"
               value={setting.value}
               onChange={(e) => handleChange(setting.id, e.target.value)}
-              className="border p-2 rounded w-full md:w-1/2"
+              className="border p-2 rounded w-full text-sm sm:text-base"
             />
           </div>
         ))}

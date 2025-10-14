@@ -31,10 +31,10 @@ export default function ShopSection() {
   return (
     <div className="px-14 pt-20 bg-[#FFFDFA]">
       <h2 className="text-5xl mb-8 font-semibold">All Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-10">
         {shops.map((shop) => (
           <div key={shop._id} className="flex flex-col gap-2">
-            <div className="relative w-[96%] h-[390px] overflow-hidden">
+            <div className="relative w-[94%] h-[440px] overflow-hidden">
               <Image
                 src={shop.imageUrl}
                 alt={shop.title}
@@ -49,7 +49,7 @@ export default function ShopSection() {
             <h1 className="hover:underline text-[26px] font-semibold text-center">
               {shop.title}
             </h1>
-            <p className="text-[16px] text-gray-600 text-center">{shop.description}</p>
+            <p className="text-[20px] text-gray-600 text-center">{shop.description}</p>
             <div className="flex items-center justify-center mt-3">
               
               <Link href={`/shop/${shop._id}`}>

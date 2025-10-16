@@ -46,9 +46,29 @@ export const getData = async (): Promise<
                 priority
               />
             </Link>
+
+            <div className="bg-white w-[510px] h-[220px] z-20 relative mt-[445px]">
+              <div className="flex flex-col">
+            <div className="flex items-center">
+                      <div className="bg-[#ffbd3a4b] px-4 mt-10">
+                        <Link
+                          href="/technology"
+                          className="hover:underline text-[12px]"
+                        >
+                          BUSINESS
+                        </Link>
+                      </div>
+                      <div className="flex-1 h-px bg-black ml-1 mt-10"></div>
+                      <p className="text-[12px] mt-10">SEP 12, 2023</p>
+                      <hr className="w-4 mt-10" />
+                      </div>
+                      <h2 className="text-3xl font-semibold mt-7 ">The Benefits of Professional Development Programs</h2>
+                   
+                    </div>
+            </div>
           </div>
   
-          {/* Scrollable Cards */}
+         
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {trendings.map((trending) => (
               <div key={trending._id} className="mb-8">

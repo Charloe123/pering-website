@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="w-full border-b bg-[#FFFDFA] h-20 relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
-        {/* Logo */}
+        
         <Link href="/">
           <Image
             src="https://res.cloudinary.com/dpahyb1x9/image/upload/v1756974823/Pering_logo_kpkkbf.png"
@@ -21,7 +21,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Menu */}
+        
         <ul className="hidden md:flex space-x-6 items-center">
           <li>
             <Link href="/" className="hover:text-gray-900 text-[12px] font-semibold font-[outfit]">
@@ -60,7 +60,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Desktop Social Links */}
+      
         <div className="hidden md:flex items-center space-x-3">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="border-2 rounded px-3 py-1 hover:text-gray-900 hover:border-gray-700">
             facebook
@@ -73,7 +73,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        
         <button
           className="md:hidden p-2 text-black z-50"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -82,7 +82,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      
       {menuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-40">
           <ul className="flex flex-col space-y-2 px-4 py-4">
@@ -123,7 +123,7 @@ export default function Navbar() {
             </li>
           </ul>
 
-          {/* Mobile Social Links */}
+        
           <div className="flex flex-col space-y-2 px-4 pb-4">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="border-2 rounded px-3 py-1 text-gray-700 hover:text-gray-900 hover:border-gray-700">
               facebook

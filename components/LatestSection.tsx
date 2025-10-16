@@ -66,7 +66,7 @@ export default function LatestSection() {
             key={latest._id}
             className="flex flex-col sm:flex-row gap-4 items-start cursor-pointer w-full"
           >
-            {/* Text Section */}
+           
             <div className="flex flex-col flex-1">
               <div className="flex items-center w-full flex-wrap gap-3">
                 <span className="hover:underline text-[14px] bg-[#ffbd3a4b] px-3 cursor-pointer">
@@ -93,7 +93,7 @@ export default function LatestSection() {
               </div>
             </div>
 
-            {/* Image Section */}
+          
             <Link href={`/motivation/${latest._id}`} className="w-full sm:w-[200px] sm:h-[200px] relative">
               <div className="relative w-full h-[200px] sm:w-[200px] sm:h-[200px] flex-shrink-0 overflow-hidden">
                 <Image
